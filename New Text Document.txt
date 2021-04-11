@@ -1,0 +1,94 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local HelpUi = Instance.new("Frame")
+local HelpBoost = Instance.new("TextLabel")
+local HelpType = Instance.new("TextLabel")
+local DmDrip = Instance.new("TextLabel")
+local CloseUi = Instance.new("TextButton")
+local OpenHelp = Instance.new("Frame")
+local OpenHelpGui = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+
+HelpUi.Name = "HelpUi"
+HelpUi.Parent = ScreenGui
+HelpUi.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HelpUi.Position = UDim2.new(0.630331755, 0, 0.321070224, 0)
+HelpUi.Size = UDim2.new(0, 289, 0, 140)
+HelpUi.Visible = false
+HelpUi.Active = true
+HelpUi.Draggable = true
+
+HelpBoost.Name = "HelpBoost"
+HelpBoost.Parent = HelpUi
+HelpBoost.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+HelpBoost.Position = UDim2.new(0, 0, -0.0127535136, 0)
+HelpBoost.Size = UDim2.new(0, 289, 0, 38)
+HelpBoost.Font = Enum.Font.GothamSemibold
+HelpBoost.Text = "If you want to in fact boost up your speed"
+HelpBoost.TextColor3 = Color3.fromRGB(0, 0, 0)
+HelpBoost.TextSize = 14.000
+
+HelpType.Name = "HelpType"
+HelpType.Parent = HelpUi
+HelpType.BackgroundColor3 = Color3.fromRGB(122, 122, 122)
+HelpType.Position = UDim2.new(0, 0, 0.213270351, 0)
+HelpType.Size = UDim2.new(0, 289, 0, 38)
+HelpType.Font = Enum.Font.GothamSemibold
+HelpType.Text = "Open Inf Yield press ; and type ws [number]"
+HelpType.TextColor3 = Color3.fromRGB(0, 0, 0)
+HelpType.TextSize = 14.000
+
+DmDrip.Name = "Dm Drip"
+DmDrip.Parent = HelpUi
+DmDrip.BackgroundColor3 = Color3.fromRGB(127, 127, 127)
+DmDrip.Position = UDim2.new(0, 0, 0.486513644, 0)
+DmDrip.Size = UDim2.new(0, 289, 0, 72)
+DmDrip.Font = Enum.Font.GothamSemibold
+DmDrip.Text = "Dm Drippy#9419 for more help or info"
+DmDrip.TextColor3 = Color3.fromRGB(0, 0, 0)
+DmDrip.TextSize = 14.000
+
+CloseUi.Name = "CloseUi"
+CloseUi.Parent = HelpUi
+CloseUi.BackgroundColor3 = Color3.fromRGB(154, 154, 154)
+CloseUi.Position = UDim2.new(0.882352948, 0, 0, 0)
+CloseUi.Size = UDim2.new(0, 34, 0, 12)
+CloseUi.Font = Enum.Font.GothamSemibold
+CloseUi.Text = "X"
+CloseUi.TextColor3 = Color3.fromRGB(0, 0, 0)
+CloseUi.TextSize = 14.000
+CloseUi.MouseButton1Down:connect(function()
+	HelpUi.Visible = false
+	OpenHelp.Visible = true
+end)
+
+OpenHelp.Name = "OpenHelp"
+OpenHelp.Parent = ScreenGui
+OpenHelp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OpenHelp.Position = UDim2.new(0, 0, 0.556856155, 0)
+OpenHelp.Size = UDim2.new(0, 70, 0, 44)
+OpenHelp.Active = true
+OpenHelp.Draggable = true
+
+OpenHelpGui.Name = "OpenHelpGui"
+OpenHelpGui.Parent = OpenHelp
+OpenHelpGui.BackgroundColor3 = Color3.fromRGB(124, 124, 124)
+OpenHelpGui.BorderSizePixel = 2
+OpenHelpGui.Position = UDim2.new(0.0142857144, 0, 0, 0)
+OpenHelpGui.Size = UDim2.new(0, 69, 0, 44)
+OpenHelpGui.Font = Enum.Font.GothamSemibold
+OpenHelpGui.Text = "Help"
+OpenHelpGui.TextColor3 = Color3.fromRGB(0, 0, 0)
+OpenHelpGui.TextSize = 14.000
+OpenHelpGui.MouseButton1Down:connect(function()
+	OpenHelp.Visible = false
+	HelpUi.Visible = true
+end)
